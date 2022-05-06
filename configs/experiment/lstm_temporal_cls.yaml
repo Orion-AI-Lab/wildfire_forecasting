@@ -1,0 +1,43 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=lstm_temporal_cls
+
+defaults:
+  - override /trainer: default.yaml # choose trainer from 'configs/trainer/'
+  - override /model: greecefire_LSTM_model.yaml
+  - override /datamodule: fireds_temporal_datamodule.yaml
+  - override /callbacks: default.yaml
+  - override /logger: wandb.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+logger:
+  wandb:
+    name: ${oc.env:WANDB_NAME_PREFIX}_LSTM_sweep_${now:%Y%m%d_%H%M}
+
+model:
+  hidden_size: 64
+  lstm_layers: 1
+  positive_weight: 0.5
+  lr: 0.001
+  lr_scheduler_step: 15
+  lr_scheduler_gamma: 0.1
+  weight_decay: 0.001
+  dropout: 0.5
+  attention: False
+  clc: ${clc}
+
+
+datamodule:
+  batch_size: 256
+  num_workers: 16
+  pin_memory: False
+  access_mode: 'temporal'
+  problem_class: 'classification'
+  nan_fill: -1.0
+  clc: ${clc}
+
+trainer:
+  max_epochs: 30

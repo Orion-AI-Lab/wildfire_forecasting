@@ -1,0 +1,97 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - trainer: default.yaml
+  - model: greecefire_LSTM_model.yaml
+  - datamodule: fireds_temporal_datamodule.yaml
+  - callbacks: default.yaml # set this to null if you don't want to use callbacks
+  - logger: wandb # set logger here or use command line (e.g. `python run.py logger=wandb`)
+
+  - experiment: null
+  - hparams_search: null
+
+  - hydra: default.yaml
+
+  # enable color logging
+#  - override hydra/hydra_logging: colorlog
+#  - override hydra/job_logging: colorlog
+
+# path to original working directory
+# hydra hijacks working directory by changing it to the current log directory,
+# so it's useful to have this path as a special variable
+# learn more here: https://hydra.cc/docs/next/tutorials/basic/running_your_app/working_directory
+work_dir: ${hydra:runtime.cwd}
+
+# path to folder with data
+data_dir: ${work_dir}
+
+# use `python run.py debug=true` for easy debugging!
+# this will run 1 train, val and test loop with only 1 batch
+# equivalent to running `python run.py trainer.fast_dev_run=true`
+# (this is placed here just for easier access from command line)
+debug: False
+
+# pretty print config at the start of the run using Rich library
+print_config: True
+
+# disable python warnings if they annoy you
+ignore_warnings: True
+
+# check performance on test set, using the best model achieved during training
+# lightning chooses best model based on metric specified in checkpoint callback
+test_after_training: True
+
+seed: 1234
+
+
+sel_dynamic_features: [
+    '1 km 16 days NDVI',
+#    '1 km 16 days EVI',
+#    'ET_500m',
+    'LST_Day_1km',
+    'LST_Night_1km',
+#    'Fpar_500m',
+#    'Lai_500m',
+#    'era5_max_u10',
+#    'era5_max_v10',
+    'era5_max_d2m',
+    'era5_max_t2m',
+    'era5_max_sp',
+    'era5_max_tp',
+#    'era5_min_u10',
+#    'era5_min_v10',
+#    'era5_min_d2m',
+#    'era5_min_t2m',
+#    'era5_min_sp',
+#    'era5_min_tp',
+#    'era5_avg_u10',
+#    'era5_avg_v10',
+#    'era5_avg_d2m',
+#    'era5_avg_t2m',
+#    'era5_avg_sp',
+#    'era5_avg_tp',
+#    'smian',
+    'sminx',
+#    'fwi',
+#    'era5_max_wind_u10',
+#    'era5_max_wind_v10',
+    'era5_max_wind_speed',
+#    'era5_max_wind_direction',
+#    'era5_max_rh',
+    'era5_min_rh',
+#    'era5_avg_rh',
+]
+
+
+sel_static_features : [
+ 'dem_mean',
+# 'aspect_mean',
+ 'slope_mean',
+# 'roughness_mean',
+ 'roads_distance',
+ 'waterway_distance',
+ 'population_density',
+]
+
+clc: 'vec'

@@ -1,0 +1,17 @@
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: "val/loss" # name of the logged metric which determines when model is improving
+  mode: "min" # can be "max" or "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  save_last: True # additionaly always save model from last epoch
+  verbose: True
+  dirpath: "checkpoints/"
+  filename: "epoch_{epoch:03d}"
+  auto_insert_metric_name: False
+
+log_f1_precision_recall_heatmap:
+  _target_: wildfire_forecasting.callbacks.wandb_callbacks.LogF1PrecRecHeatmap
+
+log_confusion_matrix:
+  _target_: wildfire_forecasting.callbacks.wandb_callbacks.LogConfusionMatrix
+

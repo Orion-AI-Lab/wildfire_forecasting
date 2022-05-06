@@ -1,0 +1,12 @@
+_target_: wildfire_forecasting.models.greece_fire_models.LSTM_fire_model
+
+dynamic_features: ${sel_dynamic_features}
+static_features: ${sel_static_features}
+hidden_size: 16
+lstm_layers: 1
+positive_weight: 0.5
+lr: 0.01
+lr_scheduler_step: 100
+lr_scheduler_gamma: 0.1
+weight_decay: 0.035
+attention: false

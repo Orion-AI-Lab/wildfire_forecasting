@@ -1,0 +1,11 @@
+_target_: wildfire_forecasting.datamodules.greecefire_datamodule.FireDSDataModule
+
+dataset_root: *must be set to where the dataset has been downloaded*
+batch_size: 256
+num_workers: 16
+pin_memory: False
+access_mode: 'spatiotemporal'
+problem_class: 'classification'
+nan_fill: -1.0
+sel_dynamic_features: ${sel_dynamic_features}
+sel_static_features: ${sel_static_features}

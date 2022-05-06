@@ -1,0 +1,39 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=cnn_spatial_cls
+
+defaults:
+  - override /trainer: default.yaml # choose trainer from 'configs/trainer/'
+  - override /model: greecefire_ConvLSTM_model.yaml
+  - override /datamodule: fireds_spatiotemporal_datamodule.yaml
+  - override /callbacks: default.yaml
+  - override /logger: wandb.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+logger:
+  wandb:
+    name: ${oc.env:WANDB_NAME_PREFIX}_ConvLSTM_opt_${now:%Y%m%d_%H%M}
+
+model:
+  positive_weight: 0.5
+  lr_scheduler_step: 15
+  lr_scheduler_gamma: 0.1
+  hidden_size: 32
+  lstm_layers: 1
+  weight_decay: 0.01
+  dropout: 0.5
+  lr: 0.0001
+  clc: ${clc}
+
+datamodule:
+  batch_size: 256
+  num_workers: 16
+  pin_memory: False
+  nan_fill: -1.0
+  clc: ${clc}
+
+trainer:
+  max_epochs: 30
