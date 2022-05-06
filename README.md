@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/489363446.svg)](https://zenodo.org/badge/latestdoi/489363446)
+
+
 # Intro 
 
 This repository contains the code to reproduce the figures and experiments in our paper "Code for paper Wildfire Danger Prediction and Understanding with Deep Learning"
