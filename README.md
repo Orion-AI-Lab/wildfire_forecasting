@@ -40,7 +40,7 @@ Download the `datasets.tar.gz` from [https://zenodo.org/deposit/6528394](https:/
 
 `tar -xzf datasets.tar.gz`
 
-Add the path to the decompressed directory to  [configs/datamodule/fireds_spatiotemporal_datamodule.yaml]([wildfire_forecasting/configs/datamodule/fireds_spatiotemporal_datamodule.yaml) and [configs/datamodule/fireds_temporal_datamodule.yaml]([wildfire_forecasting/configs/datamodule/fireds_temporal_datamodule.yaml]
+Add the path to the decompressed directory to  [configs/datamodule/fireds_spatiotemporal_datamodule.yaml](configs/datamodule/fireds_spatiotemporal_datamodule.yaml) and [configs/datamodule/fireds_temporal_datamodule.yaml](configs/datamodule/fireds_temporal_datamodule.yaml)
 
 IMPORTANT NOTE: Make sure to have enough space to decompress the data. At least 250GB are needed!
 
