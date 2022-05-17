@@ -19,7 +19,7 @@ pip install -e .
 
 Or directly from git repository:
 ```yaml
-pip install git+git://github.com/Orion-AI-Lab/wildfire_forecasting.git --upgrade
+pip install git+https://github.com/Orion-AI-Lab/wildfire_forecasting --upgrade
 ```
 
 So any file can be easily imported into any other file like so:
