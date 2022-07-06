@@ -36,7 +36,7 @@ The code has been tested in Python 3.8
 
 ## Downloading the data
 
-Download the `datasets.tar.gz` from [https://zenodo.org/deposit/6528394](https://zenodo.org/deposit/6528394) and decompress it in your filesystem:
+Download the `datasets.tar.gz` from [https://zenodo.org/record/6528394](https://zenodo.org/record/6528394) and decompress it in your filesystem:
 
 `tar -xzf datasets.tar.gz`
 
