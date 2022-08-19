@@ -21,12 +21,12 @@ target = 'burned_areas'
 
 
 class FireDataset_npy(Dataset):
-    def __init__(self, dataset_root: Path = None, access_mode: str = 'spatiotemporal',
+    def __init__(self, dataset_root: str = None, access_mode: str = 'spatiotemporal',
                  problem_class: str = 'classification',
                  train_val_test: str = 'train', dynamic_features: list = None, static_features: list = None,
                  categorical_features: list = None, nan_fill: float = -1., neg_pos_ratio: int = 2, clc: str = None):
         """
-        @param dataset_root: Path where the dataset resides. It must contain also the minmax_clc.json
+        @param dataset_root: str where the dataset resides. It must contain also the minmax_clc.json
                 and the variable_dict.json
         @param access_mode: spatial, temporal or spatiotemporal
         @param problem_class: classification or segmentation
@@ -39,10 +39,11 @@ class FireDataset_npy(Dataset):
         @param categorical_features: selects the categorical features
         @param nan_fill: Fills nan with the value specified here
         """
-        # dataset_root should be a pathlib.Path leading to the path where the data have been downloaded and decompressed
+        # dataset_root should be a str leading to the path where the data have been downloaded and decompressed
         # Make sure to follow the details in the readme for that
         if not dataset_root:
             raise ValueError('dataset_root variable must be set. Check README')
+        dataset_root = Path(dataset_root)
         min_max_file = dataset_root / 'minmax_clc.json'
         variable_file = dataset_root / 'variable_dict.json'
 

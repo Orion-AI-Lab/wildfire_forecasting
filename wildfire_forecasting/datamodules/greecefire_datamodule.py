@@ -2,9 +2,7 @@ from typing import Optional, Tuple
 
 from pytorch_lightning import LightningDataModule
 from torch.utils.data import DataLoader
-from wildfire_forecasting.datamodules.datasets.greecefire_dataset import FireDatasetWholeDay, FireDS, FireDSnp, \
-    FireDataset_nc, \
-    FireDataset_np, FireDataset_npy
+from wildfire_forecasting.datamodules.datasets.greecefire_dataset import FireDataset_npy
 
 
 class FireDSDataModule(LightningDataModule):
