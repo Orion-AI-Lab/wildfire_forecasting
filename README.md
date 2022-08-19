@@ -59,7 +59,7 @@ See notebook [notebooks/RF.ipynb](notebooks/RF.ipynb).
 
 Training the LSTM with the hyperparameters that were used in the paper:
 
-`python run.py experiment=lstm_spatiotemporal_cls`
+`python run.py experiment=lstm_temporal_cls`
 
 ## Training the convLSTM model
 
