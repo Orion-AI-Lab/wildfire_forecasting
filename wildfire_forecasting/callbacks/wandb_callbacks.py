@@ -13,7 +13,6 @@ from pytorch_lightning.utilities import rank_zero_only
 from sklearn import metrics
 from sklearn.metrics import f1_score, precision_score, recall_score
 import gc
-from wildfire_forecasting.datamodules.greecefire_datamodule import FireDatasetWholeDay
 
 
 def get_wandb_logger(trainer: Trainer) -> WandbLogger:
