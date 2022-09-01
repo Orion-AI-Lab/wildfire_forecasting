@@ -3,7 +3,7 @@
 
 # Intro 
 
-This repository contains the code to reproduce the figures and experiments in our paper "Code for paper Wildfire Danger Prediction and Understanding with Deep Learning"
+This repository contains the code to reproduce the figures and experiments in our paper [Wildfire Danger Prediction and Understanding with Deep Learning](https://doi.org/10.1029/2022gl099368), published Geophysical Research Letters
 
 authored by Spyros Kondylatos, Ioannis Prapas, Michele Ronco, Ioannis Papoutsis, Gustau Camps-Valls, Maria Piles, Miguel-Angel Fernandez-Torres, Nuno Carvalhais
 
@@ -70,6 +70,10 @@ Training the convLSTM with the hyperparameters that were used in the paper:
 # Custom Training
 
 Please refer to the [README_template.md](README_template.md) of the code template to understand the code structure and perform any custom training.
+
+# How to cite
+
+Kondylatos, S., Prapas, I., Ronco, M., Papoutsis, I., Camps-Valls, G., Piles, M., et al. (2022). Wildfire Danger Prediction and Understanding with Deep Learning. Geophysical Research Letters, 49, e2022GL099368. https://doi.org/10.1029/2022GL099368 
 
 # Acknowledgements
 
