@@ -3,9 +3,9 @@
 
 # Intro 
 
-This repository contains the code to reproduce the figures and experiments in our paper [Wildfire Danger Prediction and Understanding with Deep Learning](https://doi.org/10.1029/2022gl099368), published Geophysical Research Letters
+This repository contains the code to reproduce the figures and experiments in our paper [Wildfire Danger Prediction and Understanding with Deep Learning](https://doi.org/10.1029/2022gl099368), published in [Geophysical Research Letters](https://agupubs.onlinelibrary.wiley.com/journal/19448007).
 
-authored by Spyros Kondylatos, Ioannis Prapas, Michele Ronco, Ioannis Papoutsis, Gustau Camps-Valls, Maria Piles, Miguel-Angel Fernandez-Torres, Nuno Carvalhais
+Authored by Spyros Kondylatos, Ioannis Prapas, Michele Ronco, Ioannis Papoutsis, Gustau Camps-Valls, Maria Piles, Miguel-Angel Fernandez-Torres, Nuno Carvalhais
 
 # Setting up
 
